@@ -1,6 +1,6 @@
 # Προσωπικές Ρυθμίσεις-Εγκατάσταση του Arch Linux
 
-Για την εγκατάσταση, ακολουθήστε το εγχειρίδιο που προτείνεται από το [Arch Linux] (https://wiki.archlinux.org/index.php/Beginners'_guide_(%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC).
+Για την εγκατάσταση, ακολουθήστε το εγχειρίδιο που προτείνεται από το [Arch Linux] (hhttps://wiki.archlinux.org/index.php/beginners'_guide).
 Έχω γράψει έναν [προσωπικό οδηγό εγκατάστασης] (http://eiosifidis.blogspot.gr/2013/09/arch-linux-2013-09-01.html) που όμως είναι απαρχαιωμένος (πολλά έχουν αλλάξει από τότε). Θα επιχειρήσω να συγκεντρώσω εδώ όλες τις αλλαγές. Η συγγραφή του παρόντως είναι αποκλειστικά για να εγκαθιστώ όσο πιο γρήγορα γίνεται το Arch Linux. Αν το βρείτε χρηστικό και για εσάς, μπορείτε να το χρησιμοποιήσετε.
 
 Οι οδηγίες αποτελούνται από τα εξής:
@@ -29,13 +29,13 @@ LILO [the rest...]: cd <dir> && ./lilo
 
 * Εγκατάσταση Arch Linux με την χρήση liveDVD άλλης διανομής (με χρήση του bootstrap). Αυτό θα το περιγράψω λίγο περισσότερο γιατί ίσως να το χρησιμοποιώ πιο συχνά. Βασίζεται στο [wiki] (https://wiki.archlinux.org/index.php/Install_from_existing_Linux).
 
-1. Κατεβάστε το [Bootstrap] (https://www.archlinux.org/download) (τσεκάρετε την έκδοση του αρχείου που κυκλοφορεί).
+- Κατεβάστε το [Bootstrap] (https://www.archlinux.org/download) (τσεκάρετε την έκδοση του αρχείου που κυκλοφορεί).
 
 ```
 curl -O http://ftp.cc.uoc.gr/mirrors/linux/archlinux/iso/2016.05.01/archlinux-bootstrap-2016.05.01-x86_64.tar.gz
 ```
 
-2. Αποσυμπιέστε το αρχείο:
+- Αποσυμπιέστε το αρχείο:
 
 ```
 tar xzf archlinux-bootstrap-2015.05.01-x86_64.tar.gz -C /tmp
@@ -43,7 +43,7 @@ tar xzf archlinux-bootstrap-2015.05.01-x86_64.tar.gz -C /tmp
 cd /tmp
 ```
 
-3. Ξεκινήστε επιλέγοντας τους servers (χώρα προέλευσης):
+- Ξεκινήστε επιλέγοντας τους servers (χώρα προέλευσης):
 
 ```
 nano /tmp/root.x86_64/etc/pacman.d/mirrorlist
@@ -53,7 +53,7 @@ nano /tmp/root.x86_64/etc/pacman.d/mirrorlist
 
 ΣΗΜΕΙΩΣΗ: Εάν εγκαθιστάτε ένα σύστημα i686 από x86_64, πρέπει να επεξεργαστείτε και το αρχείο /tmp/root.i686/etc/pacman.conf όπου πρέπει να ορίσετε το Architecture = i686 ώστε ο pacman να φέρνει τα κατάλληλα πακέτα για i686.
 
-4. Λίγο πριν μπείτε ως chroot, χρειάζεται να δώστε τις εντολές.
+- Λίγο πριν μπείτε ως chroot, χρειάζεται να δώστε τις εντολές.
 
 Εάν έχετε εγκατεστημένη την έκδοση bash 4 ή νεότερη (δώστε στο τερματικό την εντολή: echo $BASH_VERSION), θα χρειαστεί να δώστε στο τερματικό την εντολή:
 
@@ -74,7 +74,7 @@ mount --rbind /run run
 chroot /tmp/root.x86_64 /bin/bash
 ```
 
-5. Αρχικοποίηση των κλειδιών:
+- Αρχικοποίηση των κλειδιών:
 
 ```
 pacman-key --init
