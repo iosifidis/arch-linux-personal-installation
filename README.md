@@ -190,7 +190,7 @@ echo -e "en_US.UTF-8 UTF-8\nel_GR.UTF-8 UTF-8" >> /etc/locale.gen
 nano /etc/locale.conf
 ```
 
-Καλό είναι το τερματικό του συστήματος να είναι στα Αγγλικά:
+Καλό είναι το τερματικό του συστήματος να είναι στα Αγγλικά (εάν το εγκαταστήσετε με το Arch-Anywhere δεν χρειάζετε να το πειράξετε):
 
 ```
 LANG="en_US.UTF-8"
@@ -421,7 +421,7 @@ pacman -S sudo v4l-utils x264 cups transmission-gtk subdownloader subtitleeditor
 
 3.-> Προγράμματα από το AUR.
 ```
-yaourt -S viber teamviewer10 dropbox nautilus-dropbox google-talkplugin google-musicmanager menulibre pdfcrack pdfshuffler luckybackup rabbitvcs rabbitvcs-nautilus chromium-pepper-flash google-chrome imagewriter cdw simpleburn multisystem virtualbox-ext-oracle ubuntu-themes humanity-icon-theme simplescreenrecorder os-prober unetbootin libreoffice-extension-languagetool yandex-disk pcloud hplip-plugin --noconfirm
+yaourt -S spotify viber teamviewer10 dropbox nautilus-dropbox google-talkplugin google-musicmanager menulibre pdfcrack pdfshuffler luckybackup rabbitvcs rabbitvcs-nautilus chromium-pepper-flash google-chrome imagewriter cdw simpleburn multisystem virtualbox-ext-oracle ubuntu-themes numix-utouch-icon-theme humanity-icon-theme simplescreenrecorder os-prober unetbootin libreoffice-extension-languagetool yandex-disk pcloud hplip-plugin --noconfirm
 ```
 
 Το --noconfirm το χρησιμοποιείτε για να μην σας ρωτάει συνέχεια.
@@ -443,7 +443,78 @@ systemctl enable teamviewerd
 sudo systemctl start teamviewerd
 ```
 
-Όσον αφορά το Virtual Box, πρέπει να βάλετε τον χρήστη στην ομάδα vboxusers (δείτε περισσότερες πληροφορίες στο [wiki] (https://wiki.archlinux.org/index.php/VirtualBox) ):
+Όσον αφορά το Virtual Box, πρέπει να βάλετε τον χρήστη (εδώ είναι ο diamond) στην ομάδα vboxusers (δείτε περισσότερες πληροφορίες στο [wiki] (https://wiki.archlinux.org/index.php/VirtualBox) ):
 ```
-gpasswd -a yourusername vboxusers 
+gpasswd -a diamond vboxusers 
 ```
+
+# 4. Ρυθμίσεις (arch+GNOME)
+
+Όταν έκανα την εγκατάσταση με το Arch-anywhere, τα περισσότερα αρχεία μου τα άνοιγε με ότι να ναι προγράμματα. Πριν ανοίξετε τα προγράμματα, δείτε με τι ανοίγουν. Εάν δεν είναι το σωστό, πατήστε δεξί πλήκτρο->ιδιότητες και στη συνέχεια επιλέξτε την καρτέλα άνοιγμα με. Εκεί επιλέξτε το πρόγραμμα που θέλετε να ανοίγει (πχ τις εικόνες, τα βίντεο, τα txt κλπ).
+
+Κάτι που μου έκανε όταν εγκατέστησα με τις εντολές, είναι όταν τοποθετούσα το USB άνοιγε με το Anjuta. Για να το διορθώσετε, δώστε την εντολή:
+
+```
+xdg-mime default org.gnome.Nautilus.desktop inode/directory
+```
+
+-> Ρυθμίσεις χρήστη
+Καταρχήν απενεργοποιήστε το κλείδωμα οθόνης που βρίσκεται στο μενού Ιδιωτικότητα.
+Στο περιοχή και γλώσσα, βεβαιωθείτε ότι η γλώσσα και οι μορφοποιήσεις είναι στα Ελληνικά.
+Στο πληκτρολόγιο (πηγές εισόδου), βάλτε Αγγλικά και Ελληνικά (αν στο /etc/locale.gen έχετε βάλει Ελληνικά και Αγγλικά).
+Στους χρήστες, εάν θέλετε, μπορείτε να εεργοποιήσετε να εισέρχεται ο χρήστης σας αυτόματα.
+Στο gnome-tweak-tool, ενεργοποιήτε το σκούρο θέμα και αλλάξτε εικονίδια που θέλετε (αφού έχετε κάνει εγκατάσταση). Τις επεκτάσεις θα τις δείτε παρακάτω. Στην επάνω μπάρα ενεργοποιήστε το εμφάνιση ημερομηνίας. Στο παράθυρα ενεργοποιήστε την ελαχιστοποίηση-μεγιστοποίηση.
+
+-> Το δικό μου .bashrc
+
+```
+wget https://raw.githubusercontent.com/iosifidis/dot-files/master/Arch/.bashrc
+```
+
+Αυτά που ενδιαφέρουν είναι:
+
+```
+alias p="pacman"
+alias update="psyu && ysyu"
+alias psyu="sudo pacman -Syu"
+alias clean="sudo pacman -Sc"
+alias ysyu="yaourt -Syu --aur --noconfirm"
+alias repo="sudo reflector --verbose -l 200 -p http --sort rate --save /etc/pacman.d/mirrorlist"
+alias team="sudo systemctl start teamviewerd"
+alias net="nmap -sP 192.168.1.1/24"
+alias mega="megasync --local megatools --remote /Root/Uploads"
+alias weather="curl wttr.in/Thessaloniki"
+
+```
+
+-> Extensions για το GNOME
+
+Σε αρκετούς δεν αρέσει το GNOME όπως είναι. Υπάρχει τρόπος να κάνετε αλλαγές με τα [extensions] (https://extensions.gnome.org/). Εδώ είναι μερικά που χρησιμοποιώ εγώ. Έχετε υπόψιν ότι μπορεί η έκδοση GNOME που έχετε να διαφέρει από αυτήν που είναι διαθέσιμο το extension και έτσι να μην μπορείτε να το ενεργοποιήσετε.
+
+Πάμε λοιπόν:
+
+* [Dash to Dock] (https://extensions.gnome.org/extension/307/dash-to-dock/). Την μπάρα dash την εμφανίζει όταν έχετε σε πρώτο πλάνο το παράθυρο που δουλεύετε και μετακινήσετε το mouse στην άκρη. Επίσης όταν δεν έχετε ανοικτό κάποιο παράθυρο, εμφανίζει την μπάρα (σαν το Unity). Μπορείτε να την ρυθμίσετε βέβαια όπως θέλετε (μέγεθος κλπ). Τελευταία προστέθηκε να μετακινήσετε την μπάρα κάτω, δεξιά ή ακόμα και επάνω.
+
+* [Drop Down Terminal] (https://extensions.gnome.org/extension/442/drop-down-terminal/). Η χρήση του τερματικού είναι συχνή. Στο GNOME μπορείτε να χρησιμοποιήσετε αυτό το extension. Ως προεπιλογή είναι του κουμπί επάνω από το tab (το ~). Μπορείτε να το αλλάξετε σε F12. Θα κατεβαίνει λοιπόν ένα παράθυρο και χρησιμοποιείτε το terminal.
+
+* [TopIcons] (https://extensions.gnome.org/extension/495/topicons/). Τοποθετεί τα εικονίδια (προγράμματα) από την μπάρα ειδοποιήσεων στην επάνω μπάρα. Με αυτό τον τρόπο είναι ορατά συνέχεια. Με την έλευση του GNOME 3.16, οι ειδοποιήσεις έχουν μεταφερθεί. Μερικά προγράμματα όμως όταν εκτελούνται βρίσκονται κάτω αριστερά. Όταν μετακινήσετε το ποντίκι σας εκεί, θα εμφανιστεί ένα βελάκι προς τα δεξιά.
+
+* [Application Menu] (https://extensions.gnome.org/extension/6/applications-menu/): Τοποθετεί τις εφαρμογές αντί για το Δραστηριότητες. Υπάρχει και το αντίστοιχο με του Cinnamon menu που λέγεται [Gno-Menu] (https://extensions.gnome.org/extension/608/gnomenu/). Χρησιμοποιείστε όποιο σας βολέψει.
+Επίσης αντί για τα πάνω, μπορείτε να χρησιμοποιήσετε το [TaskBar] (https://extensions.gnome.org/extension/584/taskbar/). Τοποθετεί μια μπάρα δίπλα στις δραστηριότητες όπου μπορείτε να βάλετε εφαρμογές από το dash (favourites), εφαρμογές που εκτελούνται, εικονίδιο που εμφανίζει την επιφάνεια εργασίας κλπ.
+
+* [Laine] (https://extensions.gnome.org/extension/937/laine/): εξάγει τον έλεγχο του ήχου από το μενού του χρήστη. Εκτός της βοήθειας που παρέχει στον έλεγχο του ήχου, παρέχει και έλεγχο ήχου στα επιμέρους προγράμματα που εκτελούνται.
+
+* [Trash] (https://extensions.gnome.org/extension/48/trash/): όταν διαγράφετε ένα αρχείο, αυτό πάει στον κάδο ανακύκλωσης. Όταν υπάρχουν αρχεία προς άδειασμα από τον κάδο, εμφανίζεται επάνω δεξιά, ένας κάδος ανακύκλωσης που σας ενημερώνει ότι έχετε αρχεία προς διαγραφή. Είναι αρκετά χρήσιμο.
+
+* [OpenWeather] (https://extensions.gnome.org/extension/750/openweather/): Αν και έχουμε βάλει στο τερματικό τον καιρό (ως alias), εδώ το βλέπετε επάνω στην μπάρα.
+
+* [EasyScreenCast] (https://extensions.gnome.org/extension/690/easyscreencast/): το GNOME μπορεί να εγγράψει το desktop σας σε ένα βίντεο με την χρήση των πλήκτρων ALT+CONTRL+SHIFT+R. Με το πρόσθετο αυτό μπορείτε να έχετε περισσότερες ρυθμίσεις σχετικά με την λειτουργία αυτή του GNOME.
+
+* [Activities Configurator] (https://extensions.gnome.org/extension/358/activities-configurator/): με αυτό το πρόσθετο, μπορείτε να αλλάξετε την λέξη Δραστηριότητες επάνω αριστερά με αυτήν της αρεσκείας σας ή ακόμα και με εικονίδιο (πχ της διανομής σας). Επίσης μπορείτε να κάνετε διαφανή την μπάρα (όπως το παραπάνω πρόσθετο που κάνει μόνο αυτό).
+
+* [Arch Linux Updates Indicator] (https://extensions.gnome.org/extension/1010/archlinux-updates-indicator/): Επειδή το Arch Linux δεν έχει κάποιο indicator να δείχνει πότε έχει αναβαθμίσεις, αυτό είναι ένα indicator για να βλέπετε πότε έχει αναβαθμίσεις από το pacman.
+
+-> Ρυθμίσεις SSD.
+
+Δείτε περισσότερα στο [άρθρο στο blog μου] (http://eiosifidis.blogspot.gr/2013/08/ssd.html).
+
