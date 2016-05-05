@@ -318,7 +318,7 @@ pacman -S xf86-video-vesa
 
 Τώρα είναι η ώρα να εγκαταστήσετε τους drivers της κάρτας γραφικών σας. Περισσότερες πληροφορίες δείτε στην ιστοσελίδα του wiki.
 
-`Για κάρτες Nvidia`
+Για κάρτες Nvidia
 
 Εγκαταστήστε τον ανοικτό driver
 ```
@@ -332,7 +332,7 @@ pacman -S nvidia
 
 Σημείωση: Για παλιές κάρτες υπάρχουν τα πακέτα nvidia-71xx και το nvidia-96xx. Ρυθμίστε την κάρτα με το nvidia-xconfig. Όταν εγκαθιστάτε τον xorg, γίνεται αυτόματα εγκατάσταση ο nouveau (οπότε δεν χρειάζεται να δώσετε την παραπάνω εντολή). Ο κλειστός driver της NVIDIA είναι στα επίσημα repo. Εάν βάλετε τον κλειστό driver της Nvidia, δεν χρειάζεται να εγκαταστήσετε τον mesa. Σε περίπτωση που εγκαταστήσατε τον ανοικτό οδηγό και θέλετε να τον αλλάξετε στον κλειστό, απεγκαταστήστε τον xf86-video-nouveau (pacman -Rs xf86-video-nouveau xf86-video-intel xf86-video-ati) και μετά εγκαταστήστε τον κλειστό. Στην προηγούμενη εντολή απεγκαθιστούμε και οποιονδήποτε άλλον driver που χρησιμοποιεί mesa, διότι ο nvidia εγκαθιστά δικιά του έκδοση.
 
-`Για κάρτες ΑΤΙ`
+Για κάρτες ΑΤΙ
 
 Εγκαταστήστε τον ανοικτό driver
 ```
@@ -352,6 +352,8 @@ yaourt -S catalyst-dkms
 ```
 pacman -S xf86-video-intel
 ```
+
+# 
 
 Σημείωση: Το πακέτο xf86-video-intel είναι για chipsets i810/i830/i9xx για το 740 υπάρχει το xf86-video-i740.
 
@@ -384,3 +386,64 @@ systemctl enable gdm.service
 pacman -S linux-headers
 ```
 
+23.-> Επανεκκίνηση
+
+Βγαίνουμε από το chroot.
+```
+exit
+```
+
+Κάνουμε unmount και reboot.
+```
+umount /mnt/{home,}
+reboot 
+```
+
+# 3. Εγκατάσταση βασικών προγραμμάτων.
+
+1.-> Εγκατάσταση [LibreOffice] (https://wiki.archlinux.org/index.php/LibreOffice).
+
+```
+pacman -S libreoffice-still libreoffice-still-sdk libreoffice-still-el jdk7-openjdk jre7-openjdk
+```
+
+Σε περίπτωση που θέλετε τη νεότερη έκδοση, μπορείτε να εκγαταστήσετε τα
+
+```
+pacman -S libreoffice-fresh libreoffice-fresh-sdk libreoffice-fresh-el jdk7-openjdk jre7-openjdk 
+```
+
+2.-> Εγκατάσταση διαφόρων προγραμμάτων που χρησιμοποιώ προσωπικά. Σβήστε ότι δεν χρειάζεστε.
+
+```
+pacman -S sudo v4l-utils x264 cups transmission-gtk subdownloader subtitleeditor gnome-subtitles audacity audacious audacious-plugins smplayer smtube mplayer asunder dvdrip openshot devede winff mencoder sound-juicer youtube-dl easytag inkscape gimp gutenprint gphoto2 f-spot numlockx mc davfs2 aria2 hexchat polari pidgin chromium filezilla firefox firefox-i18n-el thunderbird thunderbird-i18n-el sox subversion git meld gtranslator unzip acpid htop glances lsof powertop testdisk deja-dup libdvdcss libdvdnav libdvdread libdca timidity++ ogmtools mcomix evince xchm gparted stardict gnome-settings-daemon telepathy-gabble gnome-common alacarte seahorse virtualbox vde2 virtualbox-host-dkms net-tools gnome-music gnome-photos bchunk gst-libav skype pdfsam gnome-boxes pkgfile gconf-editor hplip aspell-el
+```
+
+3.-> Προγράμματα από το AUR.
+```
+yaourt -S viber teamviewer10 dropbox nautilus-dropbox google-talkplugin google-musicmanager menulibre pdfcrack pdfshuffler luckybackup rabbitvcs rabbitvcs-nautilus chromium-pepper-flash google-chrome imagewriter cdw simpleburn multisystem virtualbox-ext-oracle ubuntu-themes humanity-icon-theme simplescreenrecorder os-prober unetbootin libreoffice-extension-languagetool yandex-disk pcloud hplip-plugin --noconfirm
+```
+
+Το --noconfirm το χρησιμοποιείτε για να μην σας ρωτάει συνέχεια.
+
+Στον messanger του facebook, θα σας κάνει μια ερώτηση και απαντάτε ναι στην αντικατάσταση αρχείων.
+
+```
+yaourt -S messengerfordesktop
+```
+
+
+Όταν τελειώσει η εγκατάσταση των παραπάνω, όσον αφορά το teamviewer, πρέπει να δώσετε τις εντολές:
+```
+systemctl enable teamviewerd
+```
+
+Για να μην εκκινεί κάθε φορά η υπηρεσία, εγώ έχω εισάγει στο .bashrc το alias για να το ξεκινώ κάθε φορά που το χρειάζομαι (θα σας αναφέρω παρακάτω και το bashrc). Η εντολή είναι η:
+```
+sudo systemctl start teamviewerd
+```
+
+Όσον αφορά το Virtual Box, πρέπει να βάλετε τον χρήστη στην ομάδα vboxusers (δείτε περισσότερες πληροφορίες στο [wiki] (https://wiki.archlinux.org/index.php/VirtualBox) ):
+```
+gpasswd -a yourusername vboxusers 
+```
