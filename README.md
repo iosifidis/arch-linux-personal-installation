@@ -421,7 +421,7 @@ pacman -S sudo v4l-utils x264 cups transmission-gtk subdownloader subtitleeditor
 
 3.-> Προγράμματα από το AUR.
 ```
-yaourt -S spotify viber teamviewer10 dropbox nautilus-dropbox google-talkplugin google-musicmanager menulibre pdfcrack pdfshuffler luckybackup rabbitvcs rabbitvcs-nautilus chromium-pepper-flash google-chrome imagewriter cdw simpleburn multisystem virtualbox-ext-oracle ubuntu-themes numix-utouch-icon-theme humanity-icon-theme simplescreenrecorder os-prober unetbootin libreoffice-extension-languagetool yandex-disk pcloud hplip-plugin --noconfirm
+yaourt -S spotify viber teamviewer10 dropbox nautilus-dropbox google-talkplugin google-musicmanager menulibre pdfcrack pdfshuffler luckybackup rabbitvcs rabbitvcs-nautilus chromium-pepper-flash google-chrome imagewriter cdw simpleburn multisystem virtualbox-ext-oracle ubuntu-themes numix-utouch-icon-theme humanity-icon-theme simplescreenrecorder os-prober unetbootin libreoffice-extension-languagetool yandex-disk pcloud hplip-plugin gnome-gmail --noconfirm
 ```
 
 Το --noconfirm το χρησιμοποιείτε για να μην σας ρωτάει συνέχεια.
@@ -464,6 +464,13 @@ xdg-mime default org.gnome.Nautilus.desktop inode/directory
 Στο πληκτρολόγιο (πηγές εισόδου), βάλτε Αγγλικά και Ελληνικά (αν στο /etc/locale.gen έχετε βάλει Ελληνικά και Αγγλικά).
 Στους χρήστες, εάν θέλετε, μπορείτε να εεργοποιήσετε να εισέρχεται ο χρήστης σας αυτόματα.
 Στο gnome-tweak-tool, ενεργοποιήτε το σκούρο θέμα και αλλάξτε εικονίδια που θέλετε (αφού έχετε κάνει εγκατάσταση). Τις επεκτάσεις θα τις δείτε παρακάτω. Στην επάνω μπάρα ενεργοποιήστε το εμφάνιση ημερομηνίας. Στο παράθυρα ενεργοποιήστε την ελαχιστοποίηση-μεγιστοποίηση.
+
+-> Μεταφορά των κουμπών ελχιστοποίησης,μεγιστοποίησης κλπ στα αριστερά
+Πιθανό να γίνεται και από άλλα σημεία (dconf κλπ) αλλά με το τερματικό γίνεται γρηγορότερα.
+
+```
+gsettings set org.gnome.desktop.wm.preferences button-layout 'close,minimize,maximize:'
+```
 
 -> Το δικό μου .bashrc
 
