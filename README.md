@@ -422,7 +422,7 @@ pacman -S sudo v4l-utils x264 cups transmission-gtk subdownloader subtitleeditor
 
 3.-> Προγράμματα από το AUR.
 ```
-yaourt -S spotify viber teamviewer10 dropbox nautilus-dropbox google-talkplugin google-musicmanager menulibre pdfcrack pdfshuffler luckybackup rabbitvcs rabbitvcs-nautilus chromium-pepper-flash google-chrome imagewriter cdw simpleburn multisystem virtualbox-ext-oracle ubuntu-themes numix-utouch-icon-theme humanity-icon-theme simplescreenrecorder os-prober unetbootin libreoffice-extension-languagetool yandex-disk pcloud hplip-plugin gnome-gmail megatools ring-gnome cloudcross telegram-desktop-bin whatsie vokoscreen nautilus-megasync p7zip nitroshare dukto sozi sozi-extras_media mps-youtube-git polly freefilesync oranchelo-icon-theme fslint fdupes ddupes caprine skypeforlinux-bin --noconfirm
+yaourt -S spotify viber teamviewer10 dropbox nautilus-dropbox google-talkplugin google-musicmanager menulibre pdfcrack pdfshuffler luckybackup rabbitvcs rabbitvcs-nautilus chromium-pepper-flash google-chrome imagewriter cdw simpleburn multisystem virtualbox-ext-oracle ubuntu-themes numix-utouch-icon-theme humanity-icon-theme simplescreenrecorder os-prober unetbootin libreoffice-extension-languagetool yandex-disk pcloud hplip-plugin gnome-gmail megatools ring-gnome cloudcross telegram-desktop-bin whatsie vokoscreen nautilus-megasync p7zip nitroshare dukto sozi sozi-extras_media mps-youtube-git polly freefilesync oranchelo-icon-theme fslint fdupes ddupes caprine skypeforlinux-bin flatabulous oranchelo-icon-theme --noconfirm
 ```
 
 Το --noconfirm το χρησιμοποιείτε για να μην σας ρωτάει συνέχεια.
