@@ -360,7 +360,7 @@ pacman -S xf86-video-intel
 19.-> Εγκατάσταση ήχου και codecs.
 
 ```
-pacman -S alsa-utils alsa-oss pulseaudio pulseaudio-alsa gstreamer0.10-plugins gstreamer0.10-ffmpeg ffmpeg flashplugin
+pacman -S alsa-utils alsa-oss pulseaudio pulseaudio-alsa gstreamer ffmpeg flashplugin
 ```
 
 20.-> Εγκατάσταση ποντικιού κλπ.
@@ -416,13 +416,13 @@ pacman -S libreoffice-fresh libreoffice-fresh-sdk libreoffice-fresh-el jdk7-open
 2.-> Εγκατάσταση διαφόρων προγραμμάτων που χρησιμοποιώ προσωπικά. Σβήστε ότι δεν χρειάζεστε.
 
 ```
-pacman -S sudo v4l-utils x264 cups transmission-gtk subdownloader subtitleeditor gnome-subtitles audacity audacious audacious-plugins smplayer smtube mplayer asunder dvdrip openshot devede winff mencoder sound-juicer youtube-dl easytag inkscape gimp gutenprint gphoto2 numlockx mc davfs2 aria2 hexchat polari pidgin chromium filezilla firefox firefox-i18n-el thunderbird thunderbird-i18n-el sox subversion git meld gtranslator unzip acpid htop glances lsof powertop testdisk deja-dup libdvdcss libdvdnav libdvdread libdca timidity++ ogmtools mcomix evince xchm gparted stardict gnome-settings-daemon telepathy-gabble gnome-common alacarte seahorse virtualbox vde2 virtualbox-host-dkms net-tools gnome-music gnome-photos bchunk gst-libav pdfsam gnome-boxes pkgfile gconf-editor hplip aspell-el avidemux-gtk colordiff lm_sensors ekiga obs-studio handbrake handbrake-cli nmap gulp npm epiphany gnome-software reflector lxsplit pulseaudio-bluetooth bluez bluez-libs bluez-utils bluez-firmware speedtest-cli ps_mem tor arm
+pacman -S sudo v4l-utils x264 cups transmission-gtk subdownloader subtitleeditor gnome-subtitles audacity audacious audacious-plugins smplayer smtube mplayer asunder dvdrip openshot devede winff mencoder sound-juicer youtube-dl easytag inkscape gimp gutenprint gphoto2 numlockx mc davfs2 aria2 hexchat polari pidgin chromium filezilla firefox firefox-i18n-el thunderbird thunderbird-i18n-el sox subversion git meld gtranslator unzip acpid htop glances lsof powertop testdisk deja-dup libdvdcss libdvdnav libdvdread libdca timidity++ ogmtools mcomix evince xchm gparted stardict gnome-settings-daemon telepathy-gabble gnome-common alacarte seahorse virtualbox vde2 virtualbox-host-dkms net-tools gnome-music gnome-photos bchunk gst-libav pdfsam gnome-boxes pkgfile gconf-editor hplip aspell-el avidemux-qt avidemux-cli colordiff lm_sensors ekiga obs-studio handbrake handbrake-cli nmap gulp npm epiphany gnome-software reflector lxsplit pulseaudio-bluetooth bluez bluez-libs bluez-utils bluez-firmware speedtest-cli ps_mem tor arm gnome-todo links xsane rfkill syncthing-gtk strace gvfs-goa gvfs-google gvfs-smb gvfs-nfs
 
 ```
 
 3.-> Προγράμματα από το AUR.
 ```
-yaourt -S spotify viber teamviewer dropbox nautilus-dropbox google-talkplugin google-musicmanager menulibre pdfcrack pdfshuffler luckybackup rabbitvcs rabbitvcs-nautilus chromium-pepper-flash google-chrome imagewriter cdw simpleburn multisystem virtualbox-ext-oracle ubuntu-themes humanity-icon-theme simplescreenrecorder os-prober unetbootin libreoffice-extension-languagetool yandex-disk pcloud hplip-plugin gnome-gmail megatools cloudcross telegram-desktop-bin whatsie vokoscreen nautilus-megasync p7zip nitroshare dukto sozi sozi-extras_media mps-youtube-git polly fslint fdupes ddupes caprine skypeforlinux-bin skype flatabulous oranchelo-icon-theme smartgit gnome-multi-writer-git wire-desktop-bin gnome-shell-extension-dash-to-panel-git gradio etcher umplayer webtorrent-desktop-bin packer signal pacli --noconfirm
+yaourt -S spotify viber teamviewer dropbox nautilus-dropbox google-talkplugin google-musicmanager menulibre pdfcrack pdfshuffler luckybackup rabbitvcs rabbitvcs-nautilus google-chrome imagewriter cdw simpleburn multisystem virtualbox-ext-oracle ubuntu-themes humanity-icon-theme simplescreenrecorder os-prober unetbootin libreoffice-extension-languagetool yandex-disk pcloud hplip-plugin gnome-gmail megatools cloudcross telegram-desktop-bin whatsie vokoscreen nautilus-megasync p7zip nitroshare dukto sozi sozi-extras_media mps-youtube-git polly fslint fdupes ddupes caprine skypeforlinux-bin skype flatabulous oranchelo-icon-theme smartgit gnome-multi-writer-git wire-desktop-bin gnome-shell-extension-dash-to-panel-git gradio etcher umplayer webtorrent-desktop-bin packer signal pacli spflashtool-bin feedreader la-capitaine-icon-theme-git wifite-git --noconfirm
 ```
 
 Το --noconfirm το χρησιμοποιείτε για να μην σας ρωτάει συνέχεια.
